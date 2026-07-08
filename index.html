@@ -1,783 +1,439 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <title>Asalah Fashion Store </title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rody | Web Designer</title>
+    
+    <!-- خط El Messiri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* About */
-.about {
-    padding: 120px 8%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    background: #fff;
+            html {
+    scroll-behavior: smooth;
 }
 
-.about-img {
-    width: 100%;
-    height: 600px;
-    position: relative;
-    overflow: hidden;
-}
-
-.about-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.about-img::after {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 100%;
-    height: 100%;
-    border: 2px solid #C9A961;
-    z-index: -1;
-}
-
-.about-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    margin-bottom: 25px;
-    font-weight: 400;
-}
-
-.about-text p {
-    color: #666;
-    font-size: 16px;
-    line-height: 1.9;
-    margin-bottom: 20px;
-}
-
-.signature {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    color: #C9A961;
-    font-style: italic;
-    margin-top: 30px;
-}
-
-/* دارك مود للـ About */
-body.dark-mode .about {
-    background: #1a1a1a;
-}
-
-body.dark-mode .about-text h2 {
-    color: #fff;
-}
-
-body.dark-mode .about-text p {
-    color: #aaa;
-}
-
-/* موبايل */
-@media (max-width: 968px) {
-    .about {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-}
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
-        
         body {
-            background: #FAF9F6;
-            font-family: 'Cairo', sans-serif;
-            color: #2C2C2C;
+            background: #0a0a0a;
+            font-family: 'El Messiri', sans-serif;
+            color: #f5f5f5;
             overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
         }
 
-        /* البانل */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
         .nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 8%;
+            padding: 25px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(250, 249, 246, 0.95);
+            background: rgba(10, 10, 10, 0.7);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 50px;
+            font-size: 24px;
             font-weight: 700;
-            letter-spacing: 3px;
-            color: #2C2C2C;
+            letter-spacing: 2px;
         }
 
         .logo span {
-            color: #C9A961;
+            background: linear-gradient(135deg, #D4AF37, #F4E4BC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #2C2C2C;
+        .nav-btn {
+            background: transparent;
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            padding: 10px 30px;
+            border-radius: 50px;
             text-decoration: none;
-            font-size: 15px;
-            transition: 0.3s;
-            font-weight: 400;
+            transition: 0.4s;
+            font-size: 14px;
         }
 
-        .nav-links a:hover {
-            color: #C9A961;
+        .nav-btn:hover {
+            background: #D4AF37;
+            color: #0a0a0a;
         }
 
-        .dark-mode-btn {
-    background: transparent;
-    border: 2px solid #222;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #222;
-}
-
-.dark-mode-btn:hover {
-    transform: rotate(20deg);
-}
-
-.dark-mode-btn .sun-icon {
-    display: none;
-}
-
-.dark-mode-btn .moon-icon {
-    display: block;
-}
-
-body.dark-mode .dark-mode-btn {
-    border-color: #fff;
-    color: #fff;
-}
-
-body.dark-mode .dark-mode-btn .sun-icon {
-    display: block;
-}
-
-body.dark-mode .dark-mode-btn .moon-icon {
-    display: none;
-}
-        /* Hero */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
             padding: 0 8%;
-            margin-top: 80px;
             position: relative;
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1), transparent 70%);
+            pointer-events: none;
         }
 
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 64px;
+        .hero-content h1 {
+            font-family: 'El Messiri', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 .gold {
+            background: linear-gradient(135deg, #D4AF37, #F4E4BC, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #999;
+            margin-bottom: 40px;
             font-weight: 400;
-            line-height: 1.2;
-            margin-bottom: 25px;
-        }
-
-        .hero-text h1 .gold {
-            color: #C9A961;
-            font-style: italic;
-        }
-
-        .hero-text p {
-            font-size: 17px;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 35px;
-            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-cta {
             display: inline-block;
-            background: #2C2C2C;
-            color: #FAF9F6;
+            background: linear-gradient(135deg, #D4AF37, #B8941F);
+            color: #0a0a0a;
             padding: 16px 45px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: 0.4s;
-            letter-spacing: 1px;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
         }
 
         .hero-cta:hover {
-            background: #C9A961;
-            transform: translateX(-5px);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.5);
         }
 
-        .hero-img {
-            width: 100%;
-            height: 600px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Collections */
-        .collections {
+        .projects {
             padding: 120px 8%;
-            background: #fff;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 70px;
         }
 
         .section-label {
-            color: #C9A961;
-            font-size: 13px;
-            letter-spacing: 4px;
+            color: #D4AF37;
+            font-size: 14px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         .section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'El Messiri', sans-serif;
             font-size: 48px;
-            font-weight: 400;
-            color: #2C2C2C;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
         }
 
-        .gallery-grid {
+        .project-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
         }
 
-        .gallery-item {
-            background: #fff;
-            border-radius: 16px;
+        .project-card {
+            background: #111;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.5s;
+            cursor: pointer;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
 
-        .gallery-item .image-wrapper {
-            aspect-ratio: 3/4;
+        .project-img {
+            width: 100%;
+            height: 300px;
             overflow: hidden;
-            background: #f5f5f5;
+            position: relative;
+            background: #0a0a0a;
         }
 
-        .gallery-item img {
+        .project-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center top;
             display: block;
-            transition: transform 0.4s ease;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.05);
+        .project-info {
+            padding: 30px;
         }
 
-        .gallery-info {
-            padding: 20px;
-            text-align: center;
-            background: #fff;
+        .project-tag {
+            color: #D4AF37;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
         }
 
-        .gallery-info h3 {
-            margin: 0 0 8px 0;
-            font-size: 20px;
+        .project-info h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
             font-weight: 600;
-            color: #222;
         }
 
-        .gallery-info p {
-            margin: 0;
-            color: #666;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 8%;
-            background: #2C2C2C;
-            text-align: center;
-            color: #FAF9F6;
-        }
-
-        .cta-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
+        .project-info p {
+            color: #777;
+            font-size: 15px;
+            line-height: 1.7;
             margin-bottom: 20px;
-            font-weight: 400;
         }
 
-        .cta-section p {
-            font-size: 17px;
-            opacity: 0.8;
-            margin-bottom: 40px;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: #C9A961;
-            color: #2C2C2C;
-            padding: 16px 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.4s;
-            letter-spacing: 1px;
-        }
-
-        .cta-btn:hover {
-            background: #FAF9F6;
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        .footer {
-            padding: 50px 8%;
-            text-align: center;
-            background: #FAF9F6;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 25px;
-        }
-
-        .footer-links a {
-            color: #666;
+        .project-link {
+            color: #D4AF37;
             text-decoration: none;
             font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             transition: 0.3s;
         }
 
-        .footer-links a:hover {
-            color: #C9A961;
+        .project-link:hover {
+            gap: 15px;
         }
 
-        .footer p {
+        .contact {
+            padding: 120px 8%;
+            text-align: center;
+            background: #111;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .contact h2 {
+            font-family: 'El Messiri', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
             color: #999;
-            font-size: 13px;
+            font-size: 18px;
+            margin-bottom: 40px;
         }
 
-        /* زرار اطلع فوق */
-        .back-to-top {
+        .footer {
+            padding: 40px 8%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #555;
+            font-size: 14px;
+        }
+
+        .whatsapp-float {
             position: fixed;
             bottom: 30px;
             left: 30px;
-            width: 50px;
-            height: 50px;
-            background: #222;
-            color: #fff;
-            border: none;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            z-index: 1000;
+            transition: 0.4s;
         }
 
-        .back-to-top:hover {
-            background: #000;
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
         }
 
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* الدارك مود */
-        body.dark-mode {
-            background: #1a1a1a;
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .nav {
-            background: rgba(26, 26, 26, 0.95);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        body.dark-mode .logo,
-        body.dark-mode .nav-links a {
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .section-title {
-            color: #fff;
-        }
-
-        body.dark-mode .collections {
-            background: #1a1a1a;
-        }
-
-        body.dark-mode .gallery-item {
-            background: #2a2a2a;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        body.dark-mode .gallery-info {
-            background: #2a2a2a;
-        }
-
-        body.dark-mode .gallery-info h3 {
-            color: #fff;
-        }
-
-        body.dark-mode .gallery-info p {
-            color: #aaa;
-        }
-
-        body.dark-mode .section-label {
-            color: #C9A961;
-        }
-
-        body.dark-mode .footer {
-            background: #111;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        body.dark-mode .dark-mode-btn {
-            border-color: #fff;
-        }
-
-        body.dark-mode .back-to-top {
-            background: #fff;
-            color: #222;
-        }
-
-        body.dark-mode .hero-text h1 {
-            color: #fff;
-        }
-
-        body.dark-mode .hero-text p {
-            color: #aaa;
-        }
-
-        @media (max-width: 968px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
             }
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-text h1 {
+            .hero-content h1 {
                 font-size: 42px;
             }
-            .nav-links {
-                display: none;
+            .section-title {
+                font-size: 36px;
+            }
+            .contact h2 {
+                font-size: 36px;
+            }
+            .nav {
+                padding: 20px 5%;
             }
         }
-
-        @media (max-width: 600px) {
-            .back-to-top {
-                bottom: 20px;
-                left: 20px;
-                width: 45px;
-                height: 45px;
-                font-size: 20px;
-            }
-        }
-        .order-btn {
-    display: inline-block;
-    background: #C9A961;
-    color: #2C2C2C;
-    padding: 12px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 700;
-    transition: 0.3s;
-    margin-top: 15px;
-    border: 2px solid #C9A961;
+        .project-card {
+    background: #111;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.5s;
+    cursor: pointer;
+    will-change: transform;
 }
 
-.order-btn:hover {
-    background: transparent;
-    color: #C9A961;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(201,169,97,0.3);
-}
-
-body.dark-mode .order-btn {
-    background: #C9A961;
-    color: #1a1a1a;
-}
-
-body.dark-mode .order-btn:hover {
-    background: transparent;
-    color: #C9A961;
+.project-card:hover {
+    transform: translateY(-10px) !important
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
     </style>
+    <title>RODY - مصممة مواقع للبراندات البناتية</title>
+    <meta name="description" content="بصمم مواقع فخمة وسريعة للبراندات البناتية. تصميم مينيمال يبيع فعلاً مش بس شكل حلو.">
+    <meta name="keywords" content="تصميم مواقع, مصممة مواقع, مواقع بناتية, تصميم مواقع القاهرة">
 </head>
 <body>
-
+    <div id="loader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0a0a0a; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: 0.5s;">
+        <div style="font-size: 32px; font-weight: 700;">RODY<span style="color: #D4AF37;">.</span></div>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(() => document.getElementById('loader').remove(), 500);
+            }, 1000);
+        });
+    </script>
     <!-- Navbar -->
     <nav class="nav">
-        <div class="logo">اصالة<span>.</span></div>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="#collections">الكولكشن</a></li>
-                <li><a href="#about">عني</a></li>
-                <li><a href="#contact">تواصلي</a></li>
-            </ul>
-            <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">
-                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </button>
-        
-        </div>
+        <div class="logo">RODY<span>.</span></div>
+        <a href="https://wa.me/201021528577?text=شفت البورتفوليو بتاعك وعايزة موقع" class="nav-btn">تواصلي معي</a>
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
-        <div class="hero-grid">
-            <div class="hero-text">
-                <h1>عبايات <span class="gold">فاخرة</span><br>بتصميم عصري</h1>
-                <p>كل قطعة في اصالة بتتحاكي بحب وشغف. تصاميم حصرية تجمع بين الأصالة الخليجية واللمسة العصرية عشان تليق بيكي في كل مناسبة.</p>
-                <a href="#collections" class="hero-cta">شوفي الكولكشن</a>
-            </div>
-            <div class="hero-img">
-                <img src="dress2.jpg" alt="Hero Image">
-            </div>
+    <<section class="hero">
+        <div class="hero-content">
+            <h1 data-aos="fade-up">بصمم مواقع <span class="gold">فخمة</span><br>تليق بمشروعك</h1>
+            <p data-aos="fade-up" data-aos-delay="200">متخصصة في تصميم مواقع للبراندات البناتية. مينيمال، سريع، ويبيع فعلاً مش بس شكل حلو.</p>
+            <a href="#projects" class="hero-cta" data-aos="fade-up" data-aos-delay="400">شوفي شغلي</a>
         </div>
     </section>
 
-    <!-- Collections Section -->
-    <section class="collections" id="collections">
-        <div class="section-header">
-            <div class="section-label">Collections</div>
-            <h2 class="section-title">كولكشن 2026</h2>
-        </div>
+<!-- Projects -->
+<section class="projects" id="projects">
+    <div class="container">
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">مشاريع مختارة</h2>
+        
+        <div class="project-grid">
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-img"><img src="makeup.jpeg" alt="موقع متجر ميكاب"></div>
+                <div class="project-info">
+                    <div class="project-tag">E-Commerce</div>
+                    <h3>Beauty Store</h3>
+                    <p>متجر إلكتروني كامل للميكب. تصميم دارك مود فخم، سلة مشتريات، فلترة منتجات. زود مبيعات العميلة 60%</p>
+                    <a href="https://rodyfr.github.io/MAKEUP3/
+                    " class="project-link">عرض المشروع ←</a>
+                </div>
+            </div>
 
-        <div class="gallery-grid">
-    
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="dress1.jpg" alt="عباية الملكة">
-                </div>
-                <div class="gallery-info">
-                    <h3>عباية الملكة</h3>
-                    <p>تطريز يدوي فاخر • قصة ملكية</p>
-                    <div class="price">2,800 ج.م</div>
-                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الملكة%20بـ%202800ج" class="order-btn">اطلبيها واتساب</a>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-img"><img src="spa.jpg" alt="تصميم موقع سبا"></div>
+                <div class="project-info">
+                    <div class="project-tag">Landing Page</div>
+                    <h3>Luxury Spa Landing</h3>
+                    <p>مشروع صفحة لسبا نسائي بتصميم هادي وفخم. فيها حجز مواعيد أونلاين على الواتساب.</p>
+                    <a href="https://rodyfr.github.io/spa/" target="_blank" class="project-link">عرض المشروع ←</a>
                 </div>
             </div>
-        
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="dress2.jpg" alt="عباية اللؤلؤ">
-                </div>
-                <div class="gallery-info">
-                    <h3>عباية اللؤلؤ</h3>
-                    <p>تفاصيل لؤلؤ طبيعي • إطلالة ساحرة</p>
-                    <div class="price">3,200 ج.م</div>
-                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20اللؤلؤ%20بـ%203200ج" class="order-btn">اطلبيها واتساب</a>
-                </div>
-            </div>
-        
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="dress3.jpg" alt="عباية الأناقة">
-                </div>
-                <div class="gallery-info">
-                    <h3>عباية الأناقة</h3>
-                    <p>خامة حرير فاخرة • تصميم عصري</p>
-                    <div class="price">2,500 ج.م</div>
-                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الأناقة%20بـ%202500ج" class="order-btn">اطلبيها واتساب</a>
-                </div>
-            </div>
-        
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="dress4.jpg" alt="عباية الخليج">
-                </div>
-                <div class="gallery-info">
-                    <h3>عباية الخليج</h3>
-                    <p>نقوش تراثية • ألوان جذابة</p>
-                    <div class="price">2,200 ج.م</div>
-                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الخليج%20بـ%202200ج" class="order-btn">اطلبيها واتساب</a>
-                </div>
-            </div>
-        
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="dress5.jpg" alt="عباية القمر">
-                </div>
-                <div class="gallery-info">
-                    <h3>عباية القمر</h3>
-                    <p>قصة واسعة • مريحة وأنيقة</p>
-                    <div class="price">2,000 ج.م</div>
-                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20القمر%20بـ%202000ج" class="order-btn">اطلبيها واتساب</a>
-                </div>
-            </div>
-        
-            <div class="gallery-item">
-                <div class="image-wrapper">
-                    <img src="dress6.jpg" alt="عباية الورد">
-                </div>
-                <div class="gallery-info">
-                    <h3>عباية الورد</h3>
-                    <p>تطريز ورود • لمسة ناعمة</p>
-                    <div class="price">2,600 ج.م</div>
-                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الورد%20بـ%202600ج" class="order-btn">اطلبيها واتساب</a>
-                </div>
-            </div>
-        
-        </div>
-    </section>
-</section>  <!-- قفلة collections -->
 
-<!-- About Section -->
-<section class="about" id="about">
-    <div class="about-text">
-        <div class="section-label">ABOUT Asalah</div>
-        <h2>قصة أصاله</h2>
-        <p>بدأت رحلتي مع تصميم العبايات من حبي للتفاصيل الدقيقة واللمسة الفاخرة. كل عباية بصممها لازم تعكس شخصية اللي لابساها.</p>
-        <p>بشتغل على كل قطعة بنفسي من أول اختيار القماش لحد آخر غرزة, كل كولكشن محدود وإصدار خاص.</p>
-        <p>هدفي إنك لما تلبسي من أصاله تحسي إنك ملكة في كل خطوة.</p>
-        <div class="signature">Asalah</div>
-    </div>
-    <div class="about-img">
-        <img src="dress8.jpg" alt="Asalah">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-img"><img src="asalah.jpeg" alt="متجر"></div>
+                <div class="project-info">
+                    <div class="project-tag">E-Commerce</div>
+                    <h3>Asalah Store</h3>
+                    <p>متجر إلكتروني كامل للمنتجات النسائية بتصميم دارك مود فخم.</p>
+                    <a href="https://rodyfr.github.io/mAKEUP/" target="_blank" class="project-link">عرض المشروع ←</a>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
-
-<!-- CTA -->
-<section class="cta-section" id="contact">
-    <!-- CTA -->
-    <section class="cta-section" id="contact">
-        <h2>اطلبي تصميمك الخاص</h2>
-        <p>عايزة عباية بتفاصيلك أنتي؟ مقاسك، لونك المفضل، التطريز اللي بتحبيه<br>كلميني ونصممها سوا</p>
-        <a href="https://wa.me/201021528577?text=عايزة عباية تصميم خاص من اصالة" class="cta-btn">تواصلي واتساب</a>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-links">
-            <a href="https://www.instagram.com/roueda_rody/" target="_blank">Instagram</a>
-            <a href="https://www.facebook.com/roueda.rody/" target="_blank">Facebook</a>
-            <a href="https://wa.me/201021528577" target="_blank">WhatsApp</a>
-        </div>
-        <p>Asalah Fashion © 2026 — Designed by ROUEDA</p>
-    </footer>
-
-    <!-- زرار اطلع فوق -->
-    <button id="backToTop" class="back-to-top">↑</button>
-
-    <script>
-        // شيل الهاش من اللينك واطلعي فوق أول ما الصفحة تحمل
-        if (window.location.hash) {
-            history.replaceState(null, null, ' ');
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+<script>
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.nav');
+        if (window.scrollY > 50) {
+            nav.style.padding = '15px 8%';
+            nav.style.background = 'rgba(10, 10, 10, 0.95)';
+        } else {
+            nav.style.padding = '25px 8%';
+            nav.style.background = 'rgba(10, 10, 10, 0.7)';
         }
-        
-        window.addEventListener('load', function() {
-            window.scrollTo(0, 0);
-        });
+    });
+</script>
+<div class="cursor" style="width: 20px; height: 20px; border: 2px solid #D4AF37; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: 0.1s; transform: translate(-50%, -50%);"></div>
+
+<script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
     
-        // زرار الاطلاع لفوق
-        const backToTopBtn = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    
-        // الدارك مود - مفيش <script> هنا
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-        
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-        }
-        
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                localStorage.setItem('darkMode', null);
-            }
-        });
-        
-    </script>
-    </body>
-    </html>
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.style.transform = 'translate(-50%, -50%) scale(1.5)');
+        el.addEventListener('mouseleave', () => cursor.style.transform = 'translate(-50%, -50%) scale(1)');
+    });
+</script>
+
+<style>
+ * {
+    cursor: none !important;
+}
+</style>
+</body>
+</html>
